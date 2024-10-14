@@ -1,0 +1,9 @@
+{
+  "files.autoSave": "onFocusChange", // 자동 저장 설정 (포커스 변경 시 저장)
+  "editor.formatOnSave": true, // 저장 시 자동 포맷팅
+  "eslint.enable": true, // ESLint를 활성화
+  "eslint.run": "onSave", // 저장할 때만 ESLint 실행
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always" // 저장할 때 ESLint 규칙에 따라 자동 수정
+  }
+}
