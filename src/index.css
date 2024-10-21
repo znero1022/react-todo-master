@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.displayCenter {
+  @apply flex items-center justify-center;
+}
+
+.addButton {
+  @apply rounded-full px-8 py-2 text-white BoldM-none surface-orange;
+}
+
+.checkedCheckBox {
+  @apply h-5 w-5 rounded-full surface-orange;
+}
+
+.uncheckedCheckBox {
+  @apply h-5 w-5 rounded-full border-2 border-orange-500;
+}
