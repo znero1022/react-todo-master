@@ -1,4 +1,5 @@
 type Format = 'date' | 'time' | 'weekday'
+type Greeting = 'morning' | 'afternoon' | 'evening' | 'night'
 
 const dateFormat: Intl.DateTimeFormatOptions = {
   year: 'numeric',
@@ -28,4 +29,13 @@ export const formatDateString = (date: Date, format: Format) => {
     return date.toLocaleTimeString('en-US', formatTable[format])
   }
   return date.toLocaleDateString('en-US', formatTable[format])
+}
+
+export const getGreeting = (date: Date): Greeting => {
+  const hours = date.getHours()
+
+  if (0 <= hours && hours < 12) return 'morning'
+  if (12 <= hours && hours < 18) return 'afternoon'
+  if (18 <= hours && hours < 22) return 'evening'
+  return 'night'
 }
