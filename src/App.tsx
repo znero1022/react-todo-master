@@ -1,1 +1,9 @@
-export const App = () => <div>hello world!</div>;
+import { Header } from "./components/Header";
+import { Content } from "./components/Content";
+
+export const App = () => (
+  <>
+    <Header />
+    <Content />
+  </>
+);
