@@ -29,11 +29,15 @@ export default {
         500: '#C84331',
       },
       opacity: {
-        80: '0.8', // opacity-80
+        50: '0.5', // opacity-80
       },
       borderRadius: {
         full: '999px',
         100: '8px',
+      },
+      boxShadow: {
+        popup:
+          '0px 4px 2px rgba(20, 33, 43, 0.02), 0px 2px 18px rgba(20, 33, 43, 0.08)',
       },
     },
   },
