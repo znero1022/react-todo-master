@@ -1,9 +1,6 @@
-import { useState } from 'react'
 import CheckIcon from '@/assets/check.svg'
 
-export const CheckBox = () => {
-  const [checked, setChecked] = useState(false)
-
+export const CheckBox = ({ checked, setChecked }) => {
   const toggleCheckbox = () => {
     setChecked(!checked)
   }
