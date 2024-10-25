@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid'
+import { Todo } from '@/mocks/todosHandler'
 import { dummyTodos } from '@/dummyData'
 import { Button } from '@/components/common/Button'
 import { TodoItem } from '@/components/TodoItem'
@@ -11,7 +13,21 @@ export const TodoList = () => {
     setValue(e.target.value)
   }
 
-  const addTodo = () => {}
+  const addTodo = () => {
+    const newTodo: Todo = {
+      id: uuidv4(),
+      title: value,
+      content: value,
+      isDone: false,
+      tags: ['default'],
+    }
+
+    setTodos((prevTodos) => [...prevTodos, newTodo])
+  }
+
+  const deleteTodo = (id: number) => {
+    setTodos((prevTodos) => prevTodos.filter((todo) => todo.id !== id))
+  }
 
   return (
     <div className="displayCenter mt-5 w-2/3 flex-col">
@@ -32,7 +48,13 @@ export const TodoList = () => {
       </div>
       <div className="mainBox mt-3 w-full">
         {todos.map((todoData) => {
-          return <TodoItem todoData={todoData} key={todoData.id} />
+          return (
+            <TodoItem
+              todoData={todoData}
+              key={todoData.id}
+              deleteTodo={deleteTodo}
+            />
+          )
         })}
       </div>
     </div>
